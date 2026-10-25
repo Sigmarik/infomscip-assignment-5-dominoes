@@ -109,3 +109,9 @@
 #corollary()[
   Reachability is an equivalence relation on $Theta_(B, E)$.
 ]<stmt:reachability-equivalence>
+
+#definition("Reshuffle")[
+  Two configurations $C, C' in Theta_(B, E)$ are _reshuffles_ of each other if and only if
+  $exists #[injective] f: Gamma_(B, E) -> Gamma_(B, E)$ such that $f[C] = {C'}$ and
+  $forall d in Gamma_(B, E)$ $im(f(d)) = im(d)$.
+]
