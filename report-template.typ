@@ -31,6 +31,10 @@
   show figure.caption: set text(size: 0.8em)
   show bibliography: set heading(level: 2)
 
+  show "TODO:": set text(fill: red, weight: "bold")
+
+  show math.equation.where(block: false): box
+
   grid(columns: (1fr, 1fr),
     [
       #set text(

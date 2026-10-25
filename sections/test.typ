@@ -13,7 +13,7 @@ There is also a lobster shown in @fig:lobster.
 #figure(
   caption: "A lobster.",
 )[
-  #image("assets/lobster.png")
+  #image("../assets/lobster.png")
 ]<fig:lobster>
 
 
