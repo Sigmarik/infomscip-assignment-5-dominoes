@@ -88,7 +88,9 @@
 #let acknowledgements(
   authors,
 ) = [
-  == Acknowledgements
+  #set heading(numbering: none)
+
+  = Acknowledgements
 
   #let authors-with-acks = authors.filter(author => author.acknowledgements != [])
   
