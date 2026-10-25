@@ -67,14 +67,34 @@
   body
 }
 
+#let balance(
+  n: 2,
+  array,
+  renderer,
+) = {
+  let per-column = calc.ceil(array.len() / n)
+  grid(
+    columns: (range(n).map(_ => 1fr)),
+    ..array.chunks(per-column).map(chunk => {
+      for item in chunk {
+        renderer(item)
+      }
+    })
+  )
+}
+
 #let acknowledgements(
   authors,
 ) = [
   == Acknowledgements
-  #for author in authors [
-    #if author.acknowledgements != [] [
-      *#author.name*
+
+  #let authors-with-acks = authors.filter(author => author.acknowledgements != [])
+  
+  #balance(
+    authors-with-acks,
+    author => [
+      === #author.name (#author.hours-spent hours)
       #author.acknowledgements
     ]
-  ]
+  )
 ]
