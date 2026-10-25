@@ -1,2 +1,3 @@
 .vscode
 *.pdf
+!dominoes_on_grids_2026.pdf

@@ -40,7 +40,7 @@
       #set align(center)
 
       #heading()[
-        INFOMSCIP-#assignment-number\-#group
+        MSCIP-#assignment-number\-#group
       ]
 
       #v(0.5em)
