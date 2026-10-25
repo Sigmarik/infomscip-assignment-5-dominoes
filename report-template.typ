@@ -10,7 +10,7 @@
       acknowledgements: [],
     ),
     (
-      name: "John Doe",
+      name: "Jane Doe",
       id: "01234567",
       hours-spent: 99,
       acknowledgements: [],
@@ -39,7 +39,7 @@
 
       #set align(center)
 
-      #heading()[
+      #heading(numbering: none)[
         MSCIP-#assignment-number\-#group
       ]
 
@@ -63,6 +63,8 @@
       ]
     ]
   )
+
+  set heading(numbering: "1.1")
 
   body
 }
