@@ -56,7 +56,7 @@
 ]<def:tile>
 
 #definition("Domino")[
-  Let $B$ be a board and $E$ be an arbitrary set of colors. $d subset P(B times E)$, is a _domino_ when
+  Let $B$ be a board and $E$ be an arbitrary set. $d subset P(B times E)$, is a _domino_ when
   - $forall x, y in d$ $x_1$ and $y_1$ are adjacent,
   - $exists x, y in d x eq.not y$,
   - $forall x, y in d$ $x_2 = y_2$.
