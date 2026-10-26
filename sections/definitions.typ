@@ -51,12 +51,20 @@
   $B subset ZZ^2$ is a _board_ if it is a finite and connected.
 ]<def:board>
 
+#definition[
+  A board $B$ is _2-connected_ if and only if for all $x, y in B: x eq.not y$, there exist two paths $p, q$ such that $p eq.not q$ and $im(p) inter im(q) = {x, y}$.
+]
+
 #definition("Tile")[
   $t in ZZ^2$ is a _tile_ of board $B$ if $t in B$.
 ]<def:tile>
 
+#definition[
+  Board $B$ _has a hole_ when $overline(B)$ is not connected.
+]
+
 #definition("Domino")[
-  Let $B$ be a board and $E$ be an arbitrary set. $d subset P(B times E)$, is a _domino_ when
+  Let $B$ be a board and $E$ be an arbitrary set. $d subset Rho(B times E)$, is a _domino_ when
   - $forall x, y in d$ $x_1$ and $y_1$ are adjacent,
   - $exists x, y in d x eq.not y$,
   - $forall x, y in d$ $x_2 = y_2$.
@@ -114,4 +122,20 @@
   Two configurations $C, C' in Theta_(B, E)$ are _reshuffles_ of each other if and only if
   $exists #[injective] f: Gamma_(B, E) -> Gamma_(B, E)$ such that $f[C] = {C'}$ and
   $forall d in Gamma_(B, E)$ $im(f(d)) = im(d)$.
+]
+
+#definition("Hamiltonian Cycle")[
+  A _Hamiltonian cycle_ on a board $B$ is a sequence of tiles $H: {1, 2, ..., n} -> B$ such that
+  - $forall i, j in {1, 2, ..., n}$ $H_i = H_j <=> i = j$,
+  - $forall i, j in {1, 2, ..., n}$ $(j = i + 1 or (i = n and j = 1)) => H_i, H_j #[are adjacent]$,
+  - $forall t in B$ $exists i in {1, 2, ..., n}$ $H_i = t$.
+]
+
+#definition[
+  Let $H: {1, 2, ..., n} -> B$ be a Hamiltonian cycle on a board $B$. Two tiles $t_1, t_2 in B$ are _H-adjacent_ if and only if
+  $|H^(-1)(t_1) - H^(-1)(t_2)| in {1, n}$.
+]
+
+#definition[
+  $f^+: ZZ -> S$ is a _continuation_ or a function $f: {1, 2, ..., n} -> S$ when $forall i in ZZ forall j in {1 ... n} space exists k in ZZ: j = i + k n => f^+(i) = f(j)$.
 ]

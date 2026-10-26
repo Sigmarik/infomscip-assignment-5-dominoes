@@ -4,8 +4,7 @@
     id: "xxxxxxx",
     hours-spent: 99,
     acknowledgements: [
-      - Did stuff,
-      - Proven theorems
+      - Ingredient 4
     ],
   ),
   (
@@ -13,8 +12,8 @@
     id: "1080326",
     hours-spent: 99,
     acknowledgements: [
-      - Did stuff,
-      - Proven theorems
+      - Definitions & problem statement,
+      - Ingredient 2
     ],
   ),
   (
@@ -22,8 +21,7 @@
     id: "8248222",
     hours-spent: 99,
     acknowledgements: [
-      - Did stuff,
-      - Proven theorems
+      - Ingredient 1
     ],
   ),
   (
@@ -31,8 +29,7 @@
     id: "xxxxxxx",
     hours-spent: 99,
     acknowledgements: [
-      - Did stuff,
-      - Proven theorems
+      - Ingredient 3
     ],
   ),
 )
