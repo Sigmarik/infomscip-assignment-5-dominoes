@@ -1,7 +1,7 @@
 #let authors = (
   (
     name: "Sara Grootjen",
-    id: "xxxxxxx",
+    id: "9068155",
     hours-spent: 99,
     acknowledgements: [
       - Ingredient 4
@@ -26,7 +26,7 @@
   ),
   (
     name: "Timo van de Wijngaert",
-    id: "xxxxxxx",
+    id: "9451137",
     hours-spent: 99,
     acknowledgements: [
       - Ingredient 3
