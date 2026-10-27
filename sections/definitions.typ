@@ -59,9 +59,37 @@
   $t in ZZ^2$ is a _tile_ of board $B$ if $t in B$.
 ]<def:tile>
 
-#definition[
-  Board $B$ _has a hole_ when $overline(B)$ is not connected.
+#definition("Cycle")[
+  A sequence $c: {1, 2, ..., n} -> ZZ^2$ is a _cycle_ when for all $i, j in {1, ..., n}$, $c_i = c_j <=> i=j$ and $(i + 1 = j or (i = n and j = 1)) => c_i$ and $c_j$ are adjacent.
 ]
+
+#definition[
+  Let $f: {1, ..., n} -> E$ be a function. $chevron.l f chevron.r: {1, ..., m} -> E$ is defined such that if
+  $g: {1, ..., n} -> {1, ..., n}$ and $g_1 = 1$, $g_k = cases(g_(k-1) #[if] f_k = f_(k - 1), g_(k-1) + 1 #[otherwise])$
+  then $chevron.l f chevron.r = f circle.small g^(-1)$.
+]
+
+#corollary[
+  If $f: {1, ..., n} -> E$ is a function, then $chevron.l f chevron.r$ is also a function.
+]
+
+*Note:* $chevron.l dot chevron.r$ is a sequential deduplication operator, meaning it removes consecutive duplicates of the same element in a sequence. For example, $chevron.l (1, 1, 2, 2, 3, 2) chevron.r = (1, 2, 3, 2)$ and $chevron.l (a, b, b, a) chevron.r = (a, b, a)$.
+
+#definition("Reduction")[
+  Let $C$ be a cycle on the board $B$. A _reduction_ of $C$ is a cycle $C': {1, ..., n} -> B$ such that
+  $exists f: B -> B, C' = chevron.l f circle.small C chevron.r, |C'| < |C|$ and
+  $forall t in B space f(t) = t #[or] f(t) #[is adjacent to] t$.
+]
+
+#corollary[
+  A reduction of a cycle of size 4 is a cycle of size 2, and a reduction of a cycle of size 2 is a trivial cycle.
+]
+
+#definition[
+  Let $B$ be a board. $H$ has a  _hole_ when $exists #[cycle] C, |C| > 1$ such that it does not have a reduction.
+
+  In other words, if there exists a non-trivial cycle $C$ that cannot be "shrunk" by moving its tiles to adjacent tiles, then $B$ has a _hole_.
+]<def:hole>
 
 #definition("Domino")[
   Let $B$ be a board and $E$ be an arbitrary set. $d subset Rho(B times E)$, is a _domino_ when
