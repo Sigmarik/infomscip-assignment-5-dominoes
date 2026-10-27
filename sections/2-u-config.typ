@@ -35,7 +35,7 @@
 
 #corollary[
   If $p: {1, 2, ..., n} -> ZZ^2$ is a path then
-  $delta_H [{1, 2, ..., n}] subset {(0, -1), (0, 1), (1, 0), (-1, 0)}$.
+  $delta_p [{1, 2, ..., n}] subset {(0, -1), (0, 1), (1, 0), (-1, 0)}$.
 ]
 
 #definition("Turn Sign")[
@@ -79,12 +79,24 @@
 )
 
 #definition[
-  Board $B$ is trivial when $|B| <= 2$.
+  Board $B$ is _trivial_ when $|B| <= 2$.
 ]
 
 #definition("Edge")[
   ${a, b}$ where $a, b in ZZ^2$ is an _edge_ when $a$ and $b$ are adjacent.
 ]
+
+#tiles(
+  template: (
+    "..",
+  ),
+  grid-path(
+    stroke: 2pt,
+    shift: (-0.5, -0.5),
+    (1, 0),
+    (1, 1),
+  ),
+)
 
 #definition[
   Edges $e_1$ and $e_2$ are _adjacent_ if either
