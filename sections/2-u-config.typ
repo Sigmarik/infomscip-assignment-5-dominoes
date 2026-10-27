@@ -15,6 +15,18 @@
 // U consists of these two squares plus the two squares adjacent in the Hamiltonian cycle;
 // together they form a 2 × 2 square.
 
+#let h-grid(..items) = {
+  let cells = items.pos()
+  
+  box(
+    grid(
+      columns: cells.len(),
+      inset: 5pt,
+      ..cells
+    )
+  )
+}
+
 #definition("Delta function")[
   Let $p: {1, 2, ..., n} -> ZZ^2$.
   The _delta function_ $delta_p: ZZ -> ZZ^2$ is defined as
@@ -37,6 +49,35 @@
   - $sigma_H (t_1) = sigma_H (t_2)$.
 ]<def:u-configuration>
 
+#h-grid(
+  tiles(
+    template: (
+      ".*",
+      ".*",
+    ),
+    grid-path(
+      // stroke: luma(150),
+      (0, 0),
+      (1, 0),
+      (1, 1),
+      (0, 1),
+    ),
+  ),
+  tiles(
+    template: (
+      "*.",
+      "*.",
+    ),
+    grid-path(
+      // stroke: luma(150),
+      (1, 0),
+      (0, 0),
+      (0, 1),
+      (1, 1),
+    ),
+  ),
+)
+
 #definition[
   Board $B$ is trivial when $|B| <= 2$.
 ]
@@ -46,13 +87,41 @@
 ]
 
 #definition[
-  Edges $e_1$ and $e_2$ are _adjacent_ if $|e^1 inter e_2| = 1$ and $e_1 union e_2$ is not contained within one row or one column.
+  Edges $e_1$ and $e_2$ are _adjacent_ if either
+  - $|e^1 inter e_2| = 1$ and $e_1 union e_2$ is not contained within one row or one column, or
+  - $forall t in e_2 space exists t' in e_1 space t #[and] t' #[are adjacent]$.
 ]
 
 #definition("Vertex")[
   $v = {a, b, c, d} subset ZZ^2$ is a _vertex_ when $forall x, y, z, w in v$ such that ${x, y}$ and ${z, w}$ are edges
   ${x, y}$ and ${z, w}$ are adjacent.
 ]
+
+#tiles(
+  template: (
+    "..",
+    "..",
+  ),
+  grid-path(
+    stroke: luma(120),
+    shift: (-0.5, -0.5),
+    (1, 0),
+    (1, 1),
+    (1, 2),
+  ),
+  grid-path(
+    stroke: luma(120),
+    shift: (-0.5, -0.5),
+    (0, 1),
+    (1, 1),
+    (2, 1),
+  ),
+  grid-path(
+    stroke: 2pt,
+    shift: (-0.5, -0.5),
+    (1, 1),
+  ),
+)
 
 #definition[
   Vertices $v_1$ and $v_2$ are _adjacent_ through an edge $e$ if $v_1 inter v_2 = e$.
@@ -70,6 +139,49 @@
   $T_p = {t in Rho(ZZ^2): t #[is an edge and] forall a, b in t space a, b #[are not $p$-adjacent]}$ is a _template_ of path $p$.
 ]
 
+#tiles(
+  template:(
+    "...",
+    "...",
+    "...",
+  ),
+  grid-path(
+    (0, 0),
+    (1, 0),
+    (1, 1),
+    (1, 2),
+    (2, 2),
+  ),
+  grid-path(
+    stroke: 2pt,
+    shift: (-0.5, -0.5),
+    (0, 0), (1, 0), (2, 0), (3, 0),
+    (3, 1), (3, 2), (3, 3), (2, 3),
+    (1, 3), (0, 3), (0, 2), (0, 1),
+    (0, 0),
+  ),
+  grid-path(
+    stroke: 2pt,
+    shift: (-0.5, -0.5),
+    (2, 0), (2, 1), (3, 1),
+  ),
+  grid-path(
+    stroke: 2pt,
+    shift: (-0.5, 0.5),
+    (2, 0), (2, 1), (3, 1),
+  ),
+  grid-path(
+    stroke: 2pt,
+    shift: (-0.5, -0.5),
+    (0, 1), (1, 1), (1, 2),
+  ),
+  grid-path(
+    stroke: 2pt,
+    shift: (-0.5, 0.5),
+    (0, 1), (1, 1), (1, 2),
+  ),
+)
+
 #statement[
   Let $H$ be a hamiltonian path on a board $B$ and let $T_H$ be a template of $H$.
   Then every loop in the vertex graph of $T_H$ encircles either all of the $B$'s tiles or none of them.
@@ -79,16 +191,6 @@
   Since $H$ goes through all tiles by definition, there exists a path from $t_1$ to $t_2$ on $H$ that, by definition, does not intersect any edge of $T_H$.
   Therefore $t_1$ and $t_2$ must be on the same side of the loop, which is a contradiction.
 ]
-
-#let h-grid(..items) = {
-  let cells = items.pos()
-  
-  grid(
-    columns: cells.len(),
-    inset: 5pt,
-    ..cells
-  )
-}
 
 #statement[
   If $C'$ is a reduction of $C$, then
