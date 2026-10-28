@@ -12,13 +12,10 @@
   A _Hamiltonian cycle_ is a track that passes through every square once and comes back to the start.
 ]<def:hamiltonian-cycle>
 
-#lemma("Lemma")[
-  Let B be a hole-free board of size $2n + 2$ for $n$ dominoes. Show that for a Hamiltonian cycle on a board as specified, no matter how the $n$ dominoes start, they can always be moved onto the cycle. That is, they each cover two squares that are adjacent in the cycle
-]<lem:lemma-1>
-
 #lemma("Ingredients")[
   Ingredient 1: Show that for a Hamiltonian cycle on a board as specified, no matter how the $n$ dominoes start, they can always be moved onto the cycle. That is, they each cover two   squares that are adjacent in the cycle.
 ]<lem:ingredients-1>
+
 #proof()[
   Set a final desired Hamiltonian cycle $H$, in the order $H_1$, $H_2$, …, $H_{2n+1}$, $H_{2n+2}$, where each $H_{i+1}$ follows $H_i$ in the cycle, with $i+1 = 1$ for $i = 2n+2$, to close the cycle. \
   Call the empty squares $E_1$ and $E_2$.
@@ -43,5 +40,5 @@
   Repeat step 2 until $k = 0$. \
 
   Finally, We have adjusted all the dominoes so that they lie on $H$.
-]<proof:ingredients-1>
+]<proof:proof-1>
 
