@@ -6,7 +6,7 @@
 
 #let statement(name: none, body) = thm(supplement: "Statement", name: name, body)
 
-= Problem Statement
+= Definitions
 
 // We are interested in boards based on the square grid, composed of a set of squares joined together
 // at their edges to form a board. We consider boards with an even number of squares, and dominoes

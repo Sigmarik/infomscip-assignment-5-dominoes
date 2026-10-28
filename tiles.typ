@@ -13,7 +13,7 @@
   template: (" . ", ".R.", " . "),
   cell: 1em,
   ..paths
-) = {
+) = box({
   let colors = (
     " ": white,
     ".": silver,
@@ -85,4 +85,4 @@
     }
   }
   ]
-}
+})
