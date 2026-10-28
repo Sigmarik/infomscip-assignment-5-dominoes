@@ -16,6 +16,7 @@
 By Ingredient 3 we can position the empty squares so that they occupy square a and d of the U, with a single domino occupying b and c.
 
 We label the two halves of the domino A and B. We assume that A occupies b and B occupies c.
+
 #tiles(
       template: (
         "..",
@@ -30,6 +31,7 @@ We label the two halves of the domino A and B. We assume that A occupies b and B
         (1, 1),
       ),
     )
+
 We want to reverse the domino so that B occupies b and A occupies c.
 
 In this situation, we have a 2x2 grid that is made out of 1 domino and two empty squares. By the rules of the game this allows us to use the pivot move (where the domino is pivoted by 90 degrees along one square) and the sideways slide move (where the domino slides to the 2 empty squares).
@@ -54,8 +56,10 @@ Pivot around A so that B moves from square c to square a. Now the domino occupie
         (0, 0),
       ),
     )
+
 Step 2.
 Do a sideways slide so that the domino now occupies c and d (where A occupies c and B occupies d) and the two empty squares occupy a and b.
+
 #tiles(
       template: (
         "..",
