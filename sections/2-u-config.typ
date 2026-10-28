@@ -195,7 +195,7 @@
 )
 
 #statement[
-  Let $H$ be a hamiltonian path on a board $B$ and let $T_H$ be a template of $H$.
+  Let $H$ be a hamiltonian cycle on a board $B$ and let $T_H$ be a template of $H$.
   Then every loop in the vertex graph of $T_H$ encircles either all of the $B$'s tiles or none of them.
 ]<stmt:all-or-none>
 #proof[
@@ -309,7 +309,7 @@
 ]
 
 #statement[
-  Let $B$ be a non-trivial board without holes and with a hamiltonian path $H$.
+  Let $B$ be a non-trivial 2-connected board without holes and with a hamiltonian cycle $H$.
   Then $exists #[vertex] v subset B$.
 ]<stmt:contained-vertex>
 #proof[
@@ -394,7 +394,7 @@
 ]
 
 #lemma("U-Configuration")[
-  Let $B$ be a non-trivial board without holes. Let $H$ be a hamiltonian path on $B$.
+  Let $B$ be a non-trivial 2-connectedboard without holes. Let $H$ be a hamiltonian cycle on $B$.
   Then there exists a U-configuration on $H$.
 ]<lem:u-configuration>
 #proof[

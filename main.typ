@@ -8,16 +8,15 @@
   authors: authors,
 )
 
-#include("sections/test.typ")
 
-#include("sections/definitions.typ")
 #include("sections/1-hamiltonian-alignment.typ")
 #include("sections/2-u-config.typ")
 #include("sections/3-adjacent-spaces.typ")
 #include("sections/4-domino-reversal.typ")
 #include("sections/5-domino-swap.typ")
 #include("sections/final.typ")
-#include("sections/further-results.typ")
+// #include("sections/further-results.typ")
+#include("sections/definitions.typ")
 
 #acknowledgements(authors)
 
